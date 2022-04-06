@@ -1,0 +1,7 @@
+header {
+    padding: 40px calc(50% - 496px);
+    background-color: #FFE44D;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
