@@ -9,6 +9,10 @@ html {
 body {
 	font-family: "Nunito", "Arial", "Helvetica", sans-serif;
 }
+.search__item {
+	padding: 20px calc(50% - 496px);
+	font-size: 28px;
+}
 
 
 
