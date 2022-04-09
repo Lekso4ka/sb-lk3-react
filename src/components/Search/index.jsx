@@ -1,17 +1,24 @@
 import React, {useState} from "react";
 import "./index.css";
+import close from "./img/close.svg";
+import icon from "./img/search.svg";
 
 const Search = (props) => {
-    const [val, updateVal] = useState(props.text); //хук состояния
-    // onInput, onChange, onBlur, onFocus
+    const [val, updateVal] = useState(props.text);
     const changeText = (e) => {
-        updateVal(e.target.value); //вызвать функцию updateVal и передать в нее новое значение переменной val
+        updateVal(e.target.value);
         props.foo(e.target.value);
     }
+    const clearText = function() {
+        updateVal("");
+        props.foo("");
+    } 
     return (
         <form>
-            <input type="text" value={val} onInput={changeText}/>
-            <div>{val}</div>
+            <input type="text" value={val} onInput={changeText} placeholder="Поиск"/>
+            <button class="search-btn" type="button">
+                {val ? <img src={close} onClick={clearText}/> : <img src={icon}/>}
+            </button>
         </form>
     )
 }

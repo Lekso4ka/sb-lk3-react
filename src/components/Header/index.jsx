@@ -8,7 +8,7 @@ const Header = ({searchText, changeText}) => {
         <header>
             <Logo/>
             <Search text={searchText} foo={changeText}/>
-            <nav>{searchText}</nav>
+            <nav>nav</nav>
         </header>
     )
 }

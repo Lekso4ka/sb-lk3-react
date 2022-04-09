@@ -3,6 +3,8 @@ form {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    position: relative;
+    justify-content: center;
 }
 input {
     background-color: #fff;
@@ -10,4 +12,15 @@ input {
     outline: none;
     padding: 12px 20px;
     border-radius: 20px;
+}
+.search-btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    position: absolute;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }

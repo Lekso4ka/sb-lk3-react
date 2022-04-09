@@ -8,8 +8,8 @@ const App = () => {
     return (
         <div className='container'>
             <Header searchText={searchText} changeText={changeText}/>
-            <div>Вы ищите {searchText}</div>
-            <Main/>
+            {searchText && <div>Вы ищите {searchText}</div>}
+            <Main search={searchText}/>
             <Footer/>
         </div>
     )
