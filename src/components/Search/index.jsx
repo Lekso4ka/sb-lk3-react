@@ -1,10 +1,12 @@
 import React, {useState} from "react";
+import "./index.css";
 
-const Search = () => {
-    const [val, updateVal] = useState("tralala"); //хук состояния
+const Search = (props) => {
+    const [val, updateVal] = useState(props.text); //хук состояния
     // onInput, onChange, onBlur, onFocus
     const changeText = (e) => {
         updateVal(e.target.value); //вызвать функцию updateVal и передать в нее новое значение переменной val
+        props.foo(e.target.value);
     }
     return (
         <form>

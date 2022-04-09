@@ -1,14 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Logo from '../Logo';
 import './index.css';
 import Search from "../Search";
 
-const Header = () => {
+const Header = ({searchText, changeText}) => {
     return (
         <header>
             <Logo/>
-            <Search/>
-            <nav>Nav</nav>
+            <Search text={searchText} foo={changeText}/>
+            <nav>{searchText}</nav>
         </header>
     )
 }
