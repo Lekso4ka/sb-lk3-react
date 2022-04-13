@@ -16,7 +16,7 @@ const Search = (props) => {
     return (
         <form>
             <input type="text" value={val} onInput={changeText} placeholder="Поиск"/>
-            <button class="search-btn" type="button">
+            <button className="search-btn" type="button">
                 {val ? <img src={close} onClick={clearText}/> : <img src={icon}/>}
             </button>
         </form>

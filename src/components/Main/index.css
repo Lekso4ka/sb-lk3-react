@@ -1,6 +1,10 @@
 main {
     padding: 40px calc(50% - 496px);
 }
+h1 {
+    margin: 0;
+    margin-bottom: 20px;
+}
 .cards-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
