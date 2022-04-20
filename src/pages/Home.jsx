@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import BannerContainer from "../components/BannerContainer";
 import { BannerCtx } from "../context/BannerContext";
 const Home = () => {
-    const { b1, b2, b3, b4, b5} = useContext(BannerCtx);
+    const { b1, b2, b3, b4, b5 } = useContext(BannerCtx);
 
     return (
         <>
