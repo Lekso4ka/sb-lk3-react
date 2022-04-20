@@ -1,13 +1,15 @@
 import React from "react";
 import "./index.css";
+import pic from "./img/logo.svg";
 
 const Card = (props) => {
     let st = {
-        backgroundImage: `url(${props.pic})`,
+        backgroundImage: `url(${pic || props.pic})`,
         backgroundSize: "contain",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        backgroundColor: "#fff"
+        backgroundColor: "#fff",
+        marginBottom: "20px"
     };
     return (
         <div className="card">

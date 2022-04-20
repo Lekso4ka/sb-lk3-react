@@ -10,8 +10,8 @@ const Main = ({search}) => {
     return (
         <main>
             <Routes>
-                <Route path="/catalog" element={<Home/>} />
-                <Route path="/" element={<Catalog searchText={search}/>} />
+                <Route path="/" element={<Home/>} />
+                <Route path="/catalog" element={<Catalog searchText={search}/>} />
                 <Route path="/cart" element={<Cart/>} />
                 <Route path="/product/:id" element={<Product/>}/>
             </Routes>
