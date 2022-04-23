@@ -21,6 +21,24 @@ class Api {
             }
         }).then(responseHandler);
     }
+    signup(body) {
+        return fetch(`${this.path}/signup`, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body)
+        }).then(responseHandler);
+    }
+    login(body) {
+        return fetch(`${this.path}/signin`, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body)
+        }).then(responseHandler);
+    }
 }
 
 const config = {

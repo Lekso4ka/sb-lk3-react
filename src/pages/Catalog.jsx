@@ -8,6 +8,10 @@ const Catalog = ({searchText}) => {
     const [cards, updateCards] = useState([]);
     const [products, updateProducts] = useState(cards);
     useEffect(() => {
+        let token = localStorage.getItem("token");
+        if (token) {
+            api.token = token;
+        }
         // if (!cards.length) {
             api.getProductList().then(data => {
                 console.log(data);

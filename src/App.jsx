@@ -10,10 +10,21 @@ import { UserCtx, UserValue } from './context/UserContext';
 
 const App = () => {
     const [searchText, changeText] = useState("");
+    const [user, setUser] = useState(localStorage.getItem("user") || "");
 
+    const userHandler = (id) => {
+        setUser(id);
+        localStorage.setItem("user", id);
+    }
+    const [token, setToken] = useState(localStorage.getItem("token") || "");
+
+    const tokenHandler = (data) => {
+        setToken(data);
+        localStorage.setItem("token", data);
+    }
     return (
         <BannerCtx.Provider value={BannerValue}>
-            <UserCtx.Provider value={UserValue}>
+            <UserCtx.Provider value={{token: token, user: user, setToken: tokenHandler, setUser: userHandler }}>
                 <div className='container'>
                     <Header searchText={searchText} changeText={changeText}/>
                     <Main search={searchText} />
