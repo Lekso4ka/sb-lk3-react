@@ -1,11 +1,13 @@
 import React, {useContext} from "react";
 import BannerContainer from "../components/BannerContainer";
 import { BannerCtx } from "../context/BannerContext";
+import Auth from "../components/Auth";
 const Home = () => {
     const { b1, b2, b3, b4, b5 } = useContext(BannerCtx);
 
     return (
         <>
+            <Auth/>
             <div className="main-banner">
                 <h1>Крафтовые лакомства<br/>для собак</h1>
                 <p>Всегда свежие лакомства ручной работы с доставкой по России и Миру</p>

@@ -1,9 +1,8 @@
 import React from "react";
+import Auth from "../components/Auth";
 
 export default () => {
     return (
-        <div>
-            <h1>Регистрация</h1>
-        </div>
+        <Auth login={false}/>
     )
 }
