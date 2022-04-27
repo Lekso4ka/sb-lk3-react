@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import api from "../Api";
 import Card from "../components/Card";
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 
 const Catalog = ({searchText}) => {
     // const cards = data.filter(el => el.name.toLowerCase().includes(searchText.toLowerCase()));
@@ -27,9 +27,9 @@ const Catalog = ({searchText}) => {
             {searchText && <div className='search__item'>По запросу <strong>{searchText}</strong> найдено {products.length} товаров</div>}
             <div className="cards-container">
                 {products.map(el => (
-                    <Link to={"/product/" + el._id} key={el._id}>
-                        <Card text={el.name} key={el._id} pic={el.pictures} price={el.price}/>
-                    </Link>
+                    // <Link to={"/product/" + el._id} key={el._id}>
+                        <Card key={el._id} {...el} />
+                    // </Link>
                 ))}
             </div>
         </>
