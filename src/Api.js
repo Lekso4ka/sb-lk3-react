@@ -21,6 +21,14 @@ class Api {
             }
         }).then(responseHandler);
     }
+    setProductLike(id, isLike) {
+        return fetch(`${this.path}/products/likes/${id}`, {
+            method: isLike ? "delete" : "put",
+            headers: {
+                "authorization": `Bearer ${this.token}`
+            }
+        }).then(responseHandler);
+    }
     signup(body) {
         return fetch(`${this.path}/signup`, {
             method: "post",

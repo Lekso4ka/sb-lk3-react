@@ -1,21 +1,25 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import api from "../Api";
 import Card from "../components/Card";
 // import {Link} from "react-router-dom";
+import { FavCtx } from "../context/FavoritesContext";
 
-const Catalog = ({searchText}) => {
+const Catalog = ({searchText, updFav}) => {
     // const cards = data.filter(el => el.name.toLowerCase().includes(searchText.toLowerCase()));
     const [cards, updateCards] = useState([]);
     const [products, updateProducts] = useState(cards);
+    const { setFavorites } = useContext(FavCtx);
     useEffect(() => {
         let token = localStorage.getItem("token");
         if (token) {
             api.token = token;
         }
+        let user = localStorage.getItem("user");
         // if (!cards.length) {
             api.getProductList().then(data => {
                 console.log(data);
                 updateCards(data.products);
+                updFav(data.products.filter(el => el.likes.includes(user)));
                 updateProducts(data.products.filter(el => el.name.toLowerCase().includes(searchText.toLowerCase())));
             });
         // }

@@ -7,7 +7,7 @@ import icFav from "../../assets/like_stroke.svg";
 import icProf from "../../assets/profile.svg";
 import { UserCtx } from "../../context/UserContext";
 
-const Header = ({searchText, changeText}) => {
+const Header = ({searchText, changeText, likes}) => {
     const { user } = useContext(UserCtx);
     return (
         <header>
@@ -19,6 +19,7 @@ const Header = ({searchText, changeText}) => {
                 <Link to="/cart">Корзина</Link>
                 <Link to="/favorites">
                     <img src={icFav} alt="Избранные товары"/>
+                    {likes}
                 </Link>
                 <Link to={user ? "/profile" : "/signin"}>
                     <img src={icProf} alt="Войти в личный кабинет"/>
