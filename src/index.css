@@ -20,3 +20,21 @@ body {
 	border-radius: 8px;
 	border: 1px solid;
 }
+.page-container {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+.page-container>div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30px;
+	height: 30px;
+	border: 1px solid;
+	border-radius: 8px;
+	cursor: pointer;
+}
+.page-container>.active {
+	color: forestgreen;
+}
